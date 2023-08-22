@@ -3,7 +3,7 @@ import { client } from "@/sanity/lib/client";
 import { postsQuery } from "@/sanity/lib/queries";
 
 export async function getStaticProps() {
-  const posts = await client.fetch("*[_type == 'post']");
+  const posts = await client.fetch(postsQuery);
 
   return {
     props: {
